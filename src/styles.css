@@ -1,0 +1,278 @@
+.navbar-brand img {
+  width: 55px;
+}
+
+.main-banner {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.29);
+  max-width: 1680px;
+}
+
+.first-title {
+  font-family: Karla, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 42px;
+  text-align: center;
+  margin-bottom: 6px;
+  color: #5e5967;
+}
+
+.girls-border {
+  border-bottom: 1px solid #29a69c;
+  box-shadow: 0 5px 2px -2px rgba(0, 0, 0, 0.15);
+  width: 990px;
+}
+
+.girls-image {
+  max-width: 620px;
+}
+
+.feature-table {
+  max-width: 720px;
+}
+
+.header-table {
+  color: #000;
+  font-family: Karla, sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  padding: 3px;
+}
+
+.title-table {
+  color: #000;
+  font-family: Karla, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+  text-align: left;
+  padding: 5px;
+}
+
+.table .fa-check-circle {
+  font-size: 42px;
+  color: #2aa69c;
+}
+
+.table .fa-times-circle {
+  font-size: 42px;
+  color: #cacee2;
+}
+
+.table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.non-border-top {
+  border-top: 0;
+}
+
+.non-border {
+  border: 0;
+}
+
+.border-left-hidden {
+  border-left: hidden;
+}
+
+.border-right-hidden {
+  border-right: hidden;
+}
+
+.subtitle-table {
+  color: #4f397d;
+  font-family: Karla, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 680px;
+  margin: 45px auto 110px;
+}
+
+.patch-info {
+  background-color: #f6f5fa;
+  padding: 75px 0 145px;
+}
+
+.patch-container {
+  max-width: 1030px;
+}
+
+.patch-card {
+  padding: 90px;
+  background-color: #ffffff;
+  border: 1px solid #e2dfef;
+  border-radius: 10px;
+}
+
+.patch-shadow-purple {
+  box-shadow: 0 2px 4px 0 #4f397d;
+  background-color: #ffffff;
+  border: 1px solid #e2dfef;
+}
+.patch-shadow-green {
+  box-shadow: 0 2px 4px 0 #29a69c;
+  background-color: #c5e9e6;
+  border: 1px solid #29a69c;
+}
+
+.patch-title {
+  color: #4f397d;
+  font-family: Karla, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  padding-left: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.patch-title-purple {
+  color: #4f397d;
+}
+
+.patch-title-green {
+  color: #2aa69c;
+}
+
+.patch-text {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Karla, sans-serif;
+  color: #000;
+}
+
+.patch-num-outer {
+  position: relative;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.patch-num-purple {
+  background-color: #4f397d;
+}
+
+.patch-num-green {
+  background-color: #2aa69c;
+}
+
+.patch-num-inner {
+  position: absolute;
+  top: 8px;
+  left: 14px;
+  font-size: 22px;
+  box-sizing: border-box;
+  font-family: Karla, sans-serif;
+}
+
+.monthly-patches {
+  color: #4f397d;
+  font-family: Karla, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: center;
+  margin: 50px 0 0;
+}
+
+.swiper-slide {
+  border: 2px solid #e2dfef;
+  border-radius: 10px;
+}
+
+.swiper-slide img {
+  border-radius: 10px;
+}
+
+@media (max-width: 575.98px) {
+  .first-title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .header-table {
+    font-size: 11px;
+    line-height: 11px;
+  }
+
+  .title-table {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .table .fa-check-circle {
+    font-size: 20px;
+  }
+
+  .table .fa-times-circle {
+    font-size: 20px;
+  }
+
+  .subtitle-table {
+    font-size: 13px;
+    line-height: 20px;
+    width: 90%;
+    margin: 0 auto 30px;
+  }
+
+  .patch-info {
+    padding: 40px 0 50px;
+  }
+
+  .patch-card {
+    padding: 26px 10px 22px;
+  }
+
+  .patch-title {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .patch-text {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .patch-num-outer {
+    width: 21px;
+    height: 21px;
+  }
+
+  .patch-num-inner {
+    top: -1px;
+    left: 6px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .monthly-patches {
+    margin-top: 30px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+/* .swiper-container {
+  width: 480px;
+}
+
+@media screen and (min-width: 640px) {
+  .swiper-container {
+    width: 640px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .swiper-container {
+    width: 768px;
+  }
+} */

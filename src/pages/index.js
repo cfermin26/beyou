@@ -1,184 +1,397 @@
-import * as React from "react"
+import * as React from "react";
+import { StaticImage } from "gatsby-plugin-image";
+import Menu from "../components/Menu";
+import Footer from "../components/Footer";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Table from "react-bootstrap/Table";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay } from "swiper";
+// import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import {
+  faCheckCircle,
+  faTimesCircle,
+} from "@fortawesome/free-solid-svg-icons";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
+SwiperCore.use([Autoplay]);
+// SwiperCore.use([Navigation]);
+// SwiperCore.use([Pagination]);
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
-
-// markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
-}
+    <main>
+      <Menu />
+      <Container fluid>
+        <Row>
+          <Col md={12} className="px-0 d-flex justify-content-center">
+            <StaticImage
+              src="../images/banner/beyou-header.jpg"
+              alt="Beyou logo"
+              className="main-banner"
+            />
+          </Col>
+        </Row>
 
-export default IndexPage
+        <Row>
+          <Col md={12} className="mt-5 mb-3 mb-md-4 mt-md-5 pt-md-5">
+            <h1 className="first-title">
+              Developed for any period. <br />
+              Experience <strong>the tingle!</strong>
+            </h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12} className="d-flex justify-content-center">
+            <div className="girls-border d-flex justify-content-center">
+              <StaticImage
+                src="../images/beyou-patch-on-girls.jpg"
+                alt="Beyou logo"
+                className="girls-image"
+              />
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12} className="d-flex justify-content-center mt-5 mt-md-5">
+            <Table bordered className="feature-table">
+              <thead>
+                <tr className="non-border-top">
+                  <th className="non-border">&nbsp;</th>
+                  <th>
+                    <StaticImage
+                      src="../images/beyou-logo-table.webp"
+                      alt="Beyou logo"
+                      className="girls-image"
+                    />
+                  </th>
+                  <th>
+                    <h3 className="header-table">
+                      Hot Water <br />
+                      Bottle
+                    </h3>
+                  </th>
+                  <th>
+                    <h3 className="header-table">
+                      Heat <br />
+                      Patches
+                    </h3>
+                  </th>
+                  <th className="border-right-hidden">
+                    <h3 className="header-table">
+                      Ice <br />
+                      Packs
+                    </h3>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-left-hidden">
+                  <td>
+                    <h3 className="title-table">On-the-go Comfort</h3>
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td className="border-right-hidden">
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                </tr>
+                <tr className="border-left-hidden">
+                  <td>
+                    <h3 className="title-table">Discreet and Lightweight</h3>
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td className="border-right-hidden">
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                </tr>
+                <tr className="border-left-hidden">
+                  <td>
+                    <h3 className="title-table">Convenient to sleep with</h3>
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td className="border-right-hidden">
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                </tr>
+                <tr className="border-left-hidden">
+                  <td>
+                    <h3 className="title-table">
+                      Proven to release over 12 hours
+                    </h3>
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td className="border-right-hidden">
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                </tr>
+                <tr className="border-left-hidden">
+                  <td>
+                    <h3 className="title-table">
+                      All Natural and Vegan-friendly
+                    </h3>
+                  </td>
+                  <td>
+                    <FontAwesomeIcon
+                      icon={faCheckCircle}
+                      className="text-center"
+                    />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td className="border-right-hidden">
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                </tr>
+                <tr className="border-left-hidden">
+                  <td>
+                    <h3 className="title-table">
+                      Cruelty-free and Biodegradable
+                    </h3>
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td className="border-right-hidden">
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={12} className="d-flex justify-content-center mt-1 mt-md-4">
+            <h4 className="subtitle-table">
+              Say goodbye to bulky heat pads and refilling hot water bottles,
+              and hello to comfort on the go with the BeYou Monthly Patch!
+            </h4>
+          </Col>
+        </Row>
+      </Container>
+
+      <div className="patch-info">
+        <Container className="patch-container">
+          <Row className="px-4">
+            <Col md={12} className="patch-card patch-shadow-purple">
+              <Row>
+                <Col md={7} className="my-auto order-2 order-md-1">
+                  <StaticImage
+                    src="../images/patch/natural-period-cramp-relief.webp"
+                    alt="Beyou logo"
+                    className="girls-image"
+                  />
+                </Col>
+                <Col md={5} className="my-auto px-4 px-md-4 order-1 order-md-1">
+                  <h2 className="patch-title patch-title-purple">
+                    <div className="patch-num-outer patch-num-purple me-2">
+                      <div className="patch-num-inner">1</div>
+                    </div>
+                    Matrix Arrangement
+                  </h2>
+                  <p className="patch-text">
+                    Our Monthly Patches encompass a proprietary matrix
+                    arrangement of Menthol and Eucalyptus molecules.
+                  </p>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+
+          <Row className="mt-4 pt-1 px-4">
+            <Col md={12} className="patch-card patch-shadow-green">
+              <Row>
+                <Col md={7} className="my-auto order-2 order-md-1">
+                  <StaticImage
+                    src="../images/patch/patch-thickness.webp"
+                    alt="Beyou logo"
+                    className="girls-image"
+                  />
+                </Col>
+                <Col md={5} className="my-auto px-4 px-md-4 order-1 order-md-1">
+                  <h2 className="patch-title patch-title-green">
+                    <div className="patch-num-outer patch-num-green me-2">
+                      <div className="patch-num-inner">2</div>
+                    </div>
+                    0.3mm thick
+                  </h2>
+                  <p className="patch-text">
+                    A thin, discreet adhesive strip that's perfectly convenient
+                    at any time of the month. Use it during work, sleep,
+                    exercise or travel!
+                  </p>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+
+          <Row className="mt-4 pt-1 px-4">
+            <Col md={12} className="patch-card patch-shadow-purple">
+              <Row>
+                <Col md={7} className="my-auto order-2 order-md-1">
+                  <StaticImage
+                    src="../images/patch/patch-release.webp"
+                    alt="Beyou logo"
+                    className="girls-image"
+                  />
+                </Col>
+                <Col md={5} className="my-auto px-4 px-md-4 order-1 order-md-1">
+                  <h2 className="patch-title patch-title-purple">
+                    <div className="patch-num-outer patch-num-purple me-2">
+                      <div className="patch-num-inner">3</div>
+                    </div>
+                    Molecules Released
+                  </h2>
+                  <p className="patch-text">
+                    Experience the fast-acting effect of the Monthly Patch over
+                    a 12 hour release, complimenting your daily routine at any
+                    time: all day or night!
+                  </p>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <Container>
+        <Row className="mt-4 mb-4 mb-md-5 mt-md-5">
+          <Col md={12}>
+            <h2 className="monthly-patches">BeYou Monthly Patches</h2>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12}>
+            <Swiper
+              slidesPerView={2}
+              spaceBetween={20}
+              autoplay={true}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                },
+                768: {
+                  slidesPerView: 3,
+                },
+              }}
+            >
+              <SwiperSlide>
+                <StaticImage
+                  src="../images/monthly/monthly-patch-1.webp"
+                  alt="Beyou"
+                  className="w-100"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <StaticImage
+                  src="../images/monthly/monthly-patch-2.webp"
+                  alt="Beyou"
+                  className="w-100"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <StaticImage
+                  src="../images/monthly/monthly-patch-3.webp"
+                  alt="Beyou"
+                  className="w-100"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <StaticImage
+                  src="../images/monthly/monthly-patch-4.webp"
+                  alt="Beyou"
+                  className="w-100"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <StaticImage
+                  src="../images/monthly/monthly-patch-5.webp"
+                  alt="Beyou"
+                  className="w-100"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <StaticImage
+                  src="../images/monthly/monthly-patch-6.webp"
+                  alt="Beyou"
+                  className="w-100"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <StaticImage
+                  src="../images/monthly/monthly-patch-7.webp"
+                  alt="Beyou"
+                  className="w-100"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <StaticImage
+                  src="../images/monthly/monthly-patch-8.webp"
+                  alt="Beyou"
+                  className="w-100"
+                />
+              </SwiperSlide>
+            </Swiper>
+          </Col>
+        </Row>
+      </Container>
+      <br />
+      <br />
+      <br />
+
+      {/* <FontAwesomeIcon icon={faCheckCircle} />
+      <FontAwesomeIcon icon={faTimesCircle} /> */}
+      <Footer />
+    </main>
+  );
+};
+
+export default IndexPage;
