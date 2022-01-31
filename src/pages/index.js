@@ -1,10 +1,12 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import Table from "react-bootstrap/Table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,6 +16,7 @@ import SwiperCore, { Autoplay } from "swiper";
 import {
   faCheckCircle,
   faTimesCircle,
+  faPlay,
 } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles.css";
@@ -26,20 +29,68 @@ SwiperCore.use([Autoplay]);
 // SwiperCore.use([Pagination]);
 
 const IndexPage = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <main>
       <Menu />
-      <Container fluid>
+      <Container fluid className="main-banner bg-yellow">
         <Row>
-          <Col md={12} className="px-0 d-flex justify-content-center">
+          <Col md={4} className="px-0 d-flex justify-content-center my-auto">
+            <div className="text-container">
+              <h1 className="banner-title">BeYou Monthly Patches</h1>
+              <h4 className="banner-subtitle">For pesky periods</h4>
+              <div className="btn-banner mt-4">
+                <Button variant="info" className="btn-buy me-3">
+                  BUY NOW
+                </Button>
+                <Button variant="light btn-play" onClick={handleShow}>
+                  <FontAwesomeIcon icon={faPlay} className="me-2" />
+                  PLAY VIDEO
+                </Button>
+              </div>
+            </div>
+          </Col>
+          <Col md={8} className="px-0 d-flex justify-content-center ">
             <StaticImage
               src="../images/banner/beyou-header.jpg"
               alt="Beyou logo"
-              className="main-banner"
             />
           </Col>
         </Row>
+      </Container>
 
+      <Modal show={show} onHide={handleClose} centered>
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body className="p-0">
+          <div
+            className="video"
+            style={{
+              position: "relative",
+              paddingBottom: "56.25%" /* 16:9 */,
+              paddingTop: 25,
+              height: 0,
+            }}
+          >
+            <iframe
+              title="beyu video"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+              src={`https://www.youtube.com/embed/D_zS5dsCD6U`}
+              frameBorder="0"
+            />
+          </div>
+        </Modal.Body>
+      </Modal>
+
+      <Container fluid>
         <Row>
           <Col md={12} className="mt-5 mb-3 mb-md-4 mt-md-5 pt-md-5">
             <h1 className="first-title">
