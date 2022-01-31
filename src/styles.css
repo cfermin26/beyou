@@ -1,5 +1,17 @@
-.navbar-brand img {
+.beyou-logo {
   width: 55px;
+}
+
+.handbag-logo {
+  width: 15px;
+}
+
+.content-menu {
+  max-width: 1680px;
+}
+
+.first-menu {
+  visibility: hidden;
 }
 
 .main-banner {
@@ -7,14 +19,75 @@
   max-width: 1680px;
 }
 
+.bg-yellow {
+  background-color: #f4c446;
+}
+
+.banner-title {
+  color: #000000;
+  font-family: Karla, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1.1;
+  text-align: center;
+}
+
+.banner-subtitle {
+  color: #000000;
+  font-family: Karla, sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+.btn-buy {
+  background-color: #2aa69c;
+  border-radius: 5px;
+  box-shadow: -2px -2px 4px 0 #fff, 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1.1;
+  min-width: 200px;
+  padding: 12px 18px;
+}
+
+.btn-buy:hover {
+  background-color: #2aa69c;
+  color: #ffffff;
+}
+
+.btn-play {
+  border-radius: 5px;
+  box-shadow: -2px -2px 4px 0 #fff, 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #4f397d;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1.1;
+  min-width: 200px;
+  padding: 12px 18px;
+}
+
+.btn-play:hover {
+  background-color: #ffffff;
+  color: #4f397d;
+}
+
+.modal-header {
+  padding: 0.5rem 1rem;
+}
+
+.modal-dialog-centered {
+  min-height: calc(80% - 3.5rem);
+}
+
 .first-title {
+  color: #5e5967;
   font-family: Karla, sans-serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 42px;
-  text-align: center;
   margin-bottom: 6px;
-  color: #5e5967;
+  text-align: center;
 }
 
 .girls-border {
@@ -35,32 +108,32 @@
   color: #000;
   font-family: Karla, sans-serif;
   font-size: 18px;
-  line-height: 20px;
   font-weight: 400;
-  text-align: center;
+  line-height: 20px;
   margin: 0;
   padding: 3px;
+  text-align: center;
 }
 
 .title-table {
   color: #000;
   font-family: Karla, sans-serif;
   font-size: 20px;
-  line-height: 24px;
   font-weight: 400;
+  line-height: 24px;
   margin: 0;
-  text-align: left;
   padding: 5px;
+  text-align: left;
 }
 
 .table .fa-check-circle {
-  font-size: 42px;
   color: #2aa69c;
+  font-size: 42px;
 }
 
 .table .fa-times-circle {
-  font-size: 42px;
   color: #cacee2;
+  font-size: 42px;
 }
 
 .table td {
@@ -90,10 +163,10 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
-  text-align: center;
   margin-bottom: 20px;
-  max-width: 680px;
   margin: 45px auto 110px;
+  max-width: 680px;
+  text-align: center;
 }
 
 .patch-info {
@@ -106,33 +179,33 @@
 }
 
 .patch-card {
-  padding: 90px;
   background-color: #ffffff;
-  border: 1px solid #e2dfef;
   border-radius: 10px;
+  border: 1px solid #e2dfef;
+  padding: 90px;
 }
 
 .patch-shadow-purple {
-  box-shadow: 0 2px 4px 0 #4f397d;
   background-color: #ffffff;
   border: 1px solid #e2dfef;
+  box-shadow: 0 2px 4px 0 #4f397d;
 }
 .patch-shadow-green {
-  box-shadow: 0 2px 4px 0 #29a69c;
   background-color: #c5e9e6;
   border: 1px solid #29a69c;
+  box-shadow: 0 2px 4px 0 #29a69c;
 }
 
 .patch-title {
+  align-items: center;
   color: #4f397d;
+  display: flex;
+  flex-direction: row;
   font-family: Karla, sans-serif;
   font-size: 22px;
   font-weight: 700;
   line-height: 24px;
   padding-left: 6px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 
 .patch-title-purple {
@@ -144,18 +217,18 @@
 }
 
 .patch-text {
+  color: #000;
+  font-family: Karla, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  font-family: Karla, sans-serif;
-  color: #000;
 }
 
 .patch-num-outer {
-  position: relative;
-  color: #fff;
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
+  color: #fff;
+  height: 40px;
+  position: relative;
+  width: 40px;
 }
 
 .patch-num-purple {
@@ -167,12 +240,12 @@
 }
 
 .patch-num-inner {
-  position: absolute;
-  top: 8px;
-  left: 14px;
-  font-size: 22px;
   box-sizing: border-box;
   font-family: Karla, sans-serif;
+  font-size: 22px;
+  left: 14px;
+  position: absolute;
+  top: 8px;
 }
 
 .monthly-patches {
@@ -181,13 +254,13 @@
   font-size: 34px;
   font-weight: 700;
   line-height: 50px;
-  text-align: center;
   margin: 50px 0 0;
+  text-align: center;
 }
 
 .swiper-slide {
-  border: 2px solid #e2dfef;
   border-radius: 10px;
+  border: 2px solid #e2dfef;
 }
 
 .swiper-slide img {
@@ -221,8 +294,8 @@
   .subtitle-table {
     font-size: 13px;
     line-height: 20px;
-    width: 90%;
     margin: 0 auto 30px;
+    width: 90%;
   }
 
   .patch-info {
@@ -244,20 +317,20 @@
   }
 
   .patch-num-outer {
-    width: 21px;
     height: 21px;
+    width: 21px;
   }
 
   .patch-num-inner {
-    top: -1px;
-    left: 6px;
     font-size: 15px;
     font-weight: 700;
+    left: 6px;
+    top: -1px;
   }
   .monthly-patches {
-    margin-top: 30px;
     font-size: 24px;
     line-height: 24px;
+    margin-top: 30px;
   }
 }
 

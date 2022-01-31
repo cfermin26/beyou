@@ -1,5 +1,5 @@
 import React from "react";
-// import Nav from "react-bootstrap/Nav";
+import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 // import Image from "react-bootstrap/Image";
@@ -8,19 +8,50 @@ import { StaticImage } from "gatsby-plugin-image";
 const Menu = () => {
   return (
     <Navbar>
-      <Container className="d-flex justify-content-center">
-        <Navbar.Brand href="/" className="text-center my-md-1">
-          <StaticImage src="../images/beyou-logo.svg" alt="Beyou logo" />
-        </Navbar.Brand>
-        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Container fluid className="content-menu">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">ITEM1</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+          <Nav className="me-auto justify-content-between align-items-center w-100">
+            <Nav.Link href="#home" className="first-menu">
+              ITEM1
+            </Nav.Link>
+            <Navbar.Brand href="/" className="text-center my-md-1">
+              <StaticImage
+                src="../images/beyou-logo.svg"
+                alt="Beyou logo"
+                className="beyou-logo"
+              />
+            </Navbar.Brand>
+            <Nav.Link href="#link" className="d-flex align-items-center">
+              Comprar Ahora
+              <StaticImage
+                src="../images/handbag.svg"
+                alt="Handbag logo"
+                className="handbag-logo ms-1"
+              />
+            </Nav.Link>
           </Nav>
-        </Navbar.Collapse> */}
+        </Navbar.Collapse>
       </Container>
     </Navbar>
+    // <Navbar>
+    //   <Container className="d-flex justify-content-center">
+    //     <Navbar.Brand href="/" className="text-center my-md-1">
+    //       <StaticImage
+    //         src="../images/beyou-logo.svg"
+    //         alt="Beyou logo"
+    //         className="beyou-logo"
+    //       />
+    //     </Navbar.Brand>
+    //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    //     <Navbar.Collapse id="basic-navbar-nav">
+    //       <Nav className="me-auto">
+    //         <Nav.Link href="#home">ITEM1</Nav.Link>
+    //         <Nav.Link href="#link">Link</Nav.Link>
+    //       </Nav>
+    //     </Navbar.Collapse>
+    //   </Container>
+    // </Navbar>
   );
 };
 
