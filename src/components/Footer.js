@@ -5,21 +5,36 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMapMarkerAlt,
+  faPhone,
+  faEnvelope,
+  faPaperPlane,
+} from "@fortawesome/free-solid-svg-icons";
 // import { StaticImage } from "gatsby-plugin-image";
 
 const Footer = () => {
   return (
     <footer>
-      <Container className="py-5">
-        <Row className="mb-4 pb-2 d-flex justify-content-center">
+      <Container className="py-4 py-md-5">
+        <Row>
+          <Col md={12}>
+            <h2 className="contact-title mb-1 mt-3 mt-md-0">Contáctanos</h2>
+          </Col>
+        </Row>
+        <Row
+          className="mb-4 pb-2 d-flex justify-content-center"
+          id="formulario"
+        >
           <Col md={8}>
             <Form
               className="contacto-form"
               id="contacto"
               // onSubmit={handleSubmit}
             >
-              <Row className="mb-3">
-                <Col md={6}>
+              <Row>
+                <Col md={6} className="mt-3">
                   <FloatingLabel label="Nombres Completos">
                     <Form.Control
                       type="text"
@@ -29,33 +44,56 @@ const Footer = () => {
                     />
                   </FloatingLabel>
                 </Col>
-                <Col md={6}>
-                  <FloatingLabel label="Email">
+                <Col md={6} className="mt-3">
+                  <FloatingLabel label="Ciudad">
                     <Form.Control
-                      type="email"
-                      placeholder="Email"
+                      type="ciudad"
+                      placeholder="Ciudad"
                       required
                       // onChange={(e) => setEmail(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
               </Row>
-              <Row className="mb-3">
-                <Col md={6}>
-                  <FloatingLabel label="Teléfono">
+              <Row>
+                <Col md={6} className="mt-3">
+                  <FloatingLabel label="Fecha de nacimiento">
                     <Form.Control
-                      type="text"
-                      placeholder="Teléfono"
+                      type="date"
+                      placeholder="Fecha de nacimiento"
                       required
                       // onChange={(e) => setTelefono(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
-                <Col md={6}>
-                  <FloatingLabel label="Direccion">
+                <Col md={6} className="mt-3">
+                  <FloatingLabel label="Dirección">
                     <Form.Control
                       type="text"
-                      placeholder="Direccion"
+                      placeholder="Dirección"
+                      required
+                      // onChange={(e) => setPais(e.target.value)}
+                    />
+                  </FloatingLabel>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col md={6} className="mt-3">
+                  <FloatingLabel label="Celular">
+                    <Form.Control
+                      type="date"
+                      placeholder="Celular"
+                      required
+                      // onChange={(e) => setTelefono(e.target.value)}
+                    />
+                  </FloatingLabel>
+                </Col>
+                <Col md={6} className="mt-3">
+                  <FloatingLabel label="Email">
+                    <Form.Control
+                      type="email"
+                      placeholder="Email"
                       required
                       // onChange={(e) => setPais(e.target.value)}
                     />
@@ -64,7 +102,7 @@ const Footer = () => {
               </Row>
 
               <Row className="mb-4">
-                <Col md={12}>
+                <Col md={12} className="mt-3">
                   <FloatingLabel label="Mensaje">
                     <Form.Control
                       as="textarea"
@@ -84,7 +122,7 @@ const Footer = () => {
                     type="submit"
                     className="btn-enviar rounded-0 px-4"
                   >
-                    Enviar
+                    <FontAwesomeIcon icon={faPaperPlane} /> ENVIAR
                   </Button>
                 </Col>
               </Row>
@@ -93,16 +131,29 @@ const Footer = () => {
         </Row>
 
         <Row className="green-border pt-4">
-          <Col md={3}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          <Col md={3} className="my-auto">
+            <p className="text-footer">
+              <FontAwesomeIcon icon={faMapMarkerAlt} /> 890 SOUTHDIXIE HIGHWAY,
+              CORAL GABLES, FL 33146 US
+            </p>
           </Col>
-          <Col md={6}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error
-            excepturi culpa esse maiores dolorem, architecto reiciendis illum
-            hic rem officia laboriosam.
+          <Col md={6} className="my-auto">
+            <p className="text-footer">
+              <FontAwesomeIcon icon={faPhone} /> +1 395 8978998
+            </p>
           </Col>
-          <Col md={3}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          <Col md={3} className="my-auto">
+            <p className="text-footer mb-1">
+              <FontAwesomeIcon icon={faEnvelope} className="pe-1" />
+              crm@beyou-online.com
+            </p>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12} className="pt-3 pt-md-0 my-auto">
+            <p className="copyright">
+              All rights reserved. © 2021 Beyu Ecuador
+            </p>
           </Col>
         </Row>
       </Container>

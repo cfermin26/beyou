@@ -2,8 +2,9 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-// import Image from "react-bootstrap/Image";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { StaticImage } from "gatsby-plugin-image";
+// import Image from "react-bootstrap/Image";
 
 const Menu = () => {
   return (
@@ -15,21 +16,24 @@ const Menu = () => {
             <Nav.Link href="#home" className="first-menu">
               ITEM1
             </Nav.Link>
-            <Navbar.Brand href="/" className="text-center my-md-1">
+            <Navbar.Brand to="/" className="text-center my-md-1">
               <StaticImage
                 src="../images/beyou-logo.svg"
                 alt="Beyou logo"
                 className="beyou-logo"
               />
             </Navbar.Brand>
-            <Nav.Link href="#link" className="d-flex align-items-center">
+            <AnchorLink
+              to="/#formulario"
+              className="d-flex align-items-center comprar-link"
+            >
               Comprar Ahora
               <StaticImage
                 src="../images/handbag.svg"
                 alt="Handbag logo"
-                className="handbag-logo ms-1"
+                className="handbag-logo ms-2"
               />
-            </Nav.Link>
+            </AnchorLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

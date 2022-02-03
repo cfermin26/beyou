@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 import Container from "react-bootstrap/Container";
@@ -48,9 +49,11 @@ const IndexPage = () => {
               </h1>
               <h4 className="banner-subtitle">For pesky periods</h4>
               <div className="btn-banner mt-4">
-                <Button variant="info" className="btn-buy me-3">
-                  BUY NOW
-                </Button>
+                <AnchorLink to="/#formulario">
+                  <Button variant="info" className="btn-buy me-3">
+                    BUY NOW
+                  </Button>
+                </AnchorLink>
                 <Button variant="light btn-play" onClick={handleShow}>
                   <FontAwesomeIcon icon={faPlay} className="me-2" />
                   PLAY VIDEO
@@ -77,7 +80,7 @@ const IndexPage = () => {
             className="video"
             style={{
               position: "relative",
-              paddingBottom: "56.25%" /* 16:9 */,
+              paddingBottom: "56.25%",
               paddingTop: 25,
               height: 0,
             }}

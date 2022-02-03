@@ -3,7 +3,7 @@
 }
 
 .handbag-logo {
-  width: 15px;
+  width: 18px;
 }
 
 .content-menu {
@@ -12,6 +12,18 @@
 
 .first-menu {
   visibility: hidden;
+}
+
+.comprar-link {
+  color: #000000;
+  font-family: Karla, sans-serif;
+  text-decoration: none;
+}
+
+.comprar-link:hover {
+  color: #000000;
+  font-family: Karla, sans-serif;
+  text-decoration: none;
 }
 
 .main-banner {
@@ -280,13 +292,44 @@
 
 footer {
   background-color: #4f397d;
+  text-align: center;
+}
+
+footer {
+  background-color: #4f397d;
+  text-align: center;
+}
+
+.contact-title {
   color: #ffffff;
+  font-family: Karla, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1.1;
   text-align: center;
 }
 
 .btn-enviar {
-  padding: 8px 12px;
+  font-family: Karla, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 19px;
   min-width: 150px;
+  padding: 10px 12px;
+}
+
+.text-footer {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.1;
+  font-family: Karla, sans-serif;
+}
+
+.copyright {
+  color: #ffffff;
+  font-size: 14px;
+  font-family: Karla, sans-serif;
 }
 
 @media (max-width: 575.98px) {
@@ -388,6 +431,10 @@ footer {
     line-height: 24px;
     min-width: 160px;
     padding: 10px 0 10px;
+  }
+
+  .contact-title {
+    font-size: 22px;
   }
 }
 
