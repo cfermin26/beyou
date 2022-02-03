@@ -10,7 +10,7 @@ import Modal from "react-bootstrap/Modal";
 import Table from "react-bootstrap/Table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from "swiper";
+import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 // import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 
 import {
@@ -25,8 +25,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 SwiperCore.use([Autoplay]);
-// SwiperCore.use([Navigation]);
-// SwiperCore.use([Pagination]);
+SwiperCore.use([Navigation]);
+SwiperCore.use([Pagination]);
 
 const IndexPage = () => {
   const [show, setShow] = useState(false);
@@ -38,9 +38,14 @@ const IndexPage = () => {
       <Menu />
       <Container fluid className="main-banner bg-yellow">
         <Row>
-          <Col md={4} className="px-0 d-flex justify-content-center my-auto">
+          <Col
+            md={4}
+            className="px-0 d-flex justify-content-center my-auto order-2 order-md-1"
+          >
             <div className="text-container">
-              <h1 className="banner-title">BeYou Monthly Patches</h1>
+              <h1 className="banner-title mb-1 mt-3 mt-md-0">
+                BeYou Monthly Patches
+              </h1>
               <h4 className="banner-subtitle">For pesky periods</h4>
               <div className="btn-banner mt-4">
                 <Button variant="info" className="btn-buy me-3">
@@ -53,7 +58,10 @@ const IndexPage = () => {
               </div>
             </div>
           </Col>
-          <Col md={8} className="px-0 d-flex justify-content-center ">
+          <Col
+            md={8}
+            className="px-0 d-flex justify-content-center order-1 order-md-2"
+          >
             <StaticImage
               src="../images/banner/beyou-header.jpg"
               alt="Beyou logo"
@@ -92,7 +100,7 @@ const IndexPage = () => {
 
       <Container fluid>
         <Row>
-          <Col md={12} className="mt-5 mb-3 mb-md-4 mt-md-5 pt-md-5">
+          <Col md={12} className="mt-4 mb-3 mb-md-4 mt-md-5 pt-md-5">
             <h1 className="first-title">
               Developed for any period. <br />
               Experience <strong>the tingle!</strong>
@@ -100,7 +108,7 @@ const IndexPage = () => {
           </Col>
         </Row>
         <Row>
-          <Col md={12} className="d-flex justify-content-center">
+          <Col md={12} className="d-flex justify-content-center px-5 px-md-0">
             <div className="girls-border d-flex justify-content-center">
               <StaticImage
                 src="../images/beyou-patch-on-girls.jpg"
@@ -365,6 +373,7 @@ const IndexPage = () => {
               slidesPerView={2}
               spaceBetween={20}
               autoplay={true}
+              pagination={{ clickable: true }}
               breakpoints={{
                 640: {
                   slidesPerView: 2,
@@ -378,7 +387,7 @@ const IndexPage = () => {
                 <StaticImage
                   src="../images/monthly/monthly-patch-1.webp"
                   alt="Beyou"
-                  className="w-100"
+                  className="w-100 py-2"
                 />
               </SwiperSlide>
               <SwiperSlide>
