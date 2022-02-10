@@ -113,7 +113,7 @@
 }
 
 .feature-table {
-  max-width: 720px;
+  max-width: 900px;
 }
 
 .header-table {
@@ -241,6 +241,7 @@
   height: 40px;
   position: relative;
   width: 40px;
+  min-width: 40px;
 }
 
 .patch-num-purple {
@@ -384,6 +385,7 @@ footer {
   .patch-num-outer {
     height: 21px;
     width: 21px;
+    min-width: 21px;
   }
 
   .patch-num-inner {

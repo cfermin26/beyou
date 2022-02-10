@@ -45,18 +45,18 @@ const IndexPage = () => {
           >
             <div className="text-container">
               <h1 className="banner-title mb-1 mt-3 mt-md-0">
-                BeYou Monthly Patches
+                BeYou, parches mensuales
               </h1>
-              <h4 className="banner-subtitle">For pesky periods</h4>
+              <h4 className="banner-subtitle">Para períodos molestos</h4>
               <div className="btn-banner mt-4">
                 <AnchorLink to="/#formulario">
                   <Button variant="info" className="btn-buy me-3">
-                    BUY NOW
+                    PEDIR AHORA
                   </Button>
                 </AnchorLink>
                 <Button variant="light btn-play" onClick={handleShow}>
                   <FontAwesomeIcon icon={faPlay} className="me-2" />
-                  PLAY VIDEO
+                  REPRODUCIR VIDEO
                 </Button>
               </div>
             </div>
@@ -105,8 +105,8 @@ const IndexPage = () => {
         <Row>
           <Col md={12} className="mt-4 mb-3 mb-md-4 mt-md-5 pt-md-5">
             <h1 className="first-title">
-              Developed for any period. <br />
-              Experience <strong>the tingle!</strong>
+              Desarrollado para cualquier periodo. <br />
+              Experimenta <strong>el hormigueo</strong>
             </h1>
           </Col>
         </Row>
@@ -136,20 +136,18 @@ const IndexPage = () => {
                   </th>
                   <th>
                     <h3 className="header-table">
-                      Hot Water <br />
-                      Bottle
+                      Fundas de <br /> Agua Caliente
                     </h3>
                   </th>
                   <th>
                     <h3 className="header-table">
-                      Heat <br />
-                      Patches
+                      Parches <br /> de calor
                     </h3>
                   </th>
                   <th className="border-right-hidden">
                     <h3 className="header-table">
-                      Ice <br />
-                      Packs
+                      Bolsas <br />
+                      de hielo
                     </h3>
                   </th>
                 </tr>
@@ -157,7 +155,7 @@ const IndexPage = () => {
               <tbody>
                 <tr className="border-left-hidden">
                   <td>
-                    <h3 className="title-table">On-the-go Comfort</h3>
+                    <h3 className="title-table">Comfort en cada uno</h3>
                   </td>
                   <td>
                     <FontAwesomeIcon icon={faCheckCircle} />
@@ -174,43 +172,7 @@ const IndexPage = () => {
                 </tr>
                 <tr className="border-left-hidden">
                   <td>
-                    <h3 className="title-table">Discreet and Lightweight</h3>
-                  </td>
-                  <td>
-                    <FontAwesomeIcon icon={faCheckCircle} />
-                  </td>
-                  <td>
-                    <FontAwesomeIcon icon={faTimesCircle} />
-                  </td>
-                  <td>
-                    <FontAwesomeIcon icon={faTimesCircle} />
-                  </td>
-                  <td className="border-right-hidden">
-                    <FontAwesomeIcon icon={faTimesCircle} />
-                  </td>
-                </tr>
-                <tr className="border-left-hidden">
-                  <td>
-                    <h3 className="title-table">Convenient to sleep with</h3>
-                  </td>
-                  <td>
-                    <FontAwesomeIcon icon={faCheckCircle} />
-                  </td>
-                  <td>
-                    <FontAwesomeIcon icon={faTimesCircle} />
-                  </td>
-                  <td>
-                    <FontAwesomeIcon icon={faCheckCircle} />
-                  </td>
-                  <td className="border-right-hidden">
-                    <FontAwesomeIcon icon={faCheckCircle} />
-                  </td>
-                </tr>
-                <tr className="border-left-hidden">
-                  <td>
-                    <h3 className="title-table">
-                      Proven to release over 12 hours
-                    </h3>
+                    <h3 className="title-table">Discreto y liviano</h3>
                   </td>
                   <td>
                     <FontAwesomeIcon icon={faCheckCircle} />
@@ -228,8 +190,44 @@ const IndexPage = () => {
                 <tr className="border-left-hidden">
                   <td>
                     <h3 className="title-table">
-                      All Natural and Vegan-friendly
+                      Conveniente para dormir con el
                     </h3>
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td className="border-right-hidden">
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                </tr>
+                <tr className="border-left-hidden">
+                  <td>
+                    <h3 className="title-table">
+                      Liberación después de las 12 horas
+                    </h3>
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td>
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                  <td className="border-right-hidden">
+                    <FontAwesomeIcon icon={faTimesCircle} />
+                  </td>
+                </tr>
+                <tr className="border-left-hidden">
+                  <td>
+                    <h3 className="title-table">Naturales y veganos</h3>
                   </td>
                   <td>
                     <FontAwesomeIcon
@@ -250,7 +248,7 @@ const IndexPage = () => {
                 <tr className="border-left-hidden">
                   <td>
                     <h3 className="title-table">
-                      Cruelty-free and Biodegradable
+                      Libres de crueldad animal y biodegradables
                     </h3>
                   </td>
                   <td>
@@ -274,8 +272,9 @@ const IndexPage = () => {
         <Row>
           <Col md={12} className="d-flex justify-content-center mt-1 mt-md-4">
             <h4 className="subtitle-table">
-              Say goodbye to bulky heat pads and refilling hot water bottles,
-              and hello to comfort on the go with the BeYou Monthly Patch!
+              Di adiós a las almohadillas térmicas voluminosas y rellenado de
+              botellas de agua caliente y hola al comfort de los parches
+              mensuales BeYou
             </h4>
           </Col>
         </Row>
@@ -298,11 +297,11 @@ const IndexPage = () => {
                     <div className="patch-num-outer patch-num-purple me-2">
                       <div className="patch-num-inner">1</div>
                     </div>
-                    Matrix Arrangement
+                    Composición{" "}
                   </h2>
                   <p className="patch-text">
-                    Our Monthly Patches encompass a proprietary matrix
-                    arrangement of Menthol and Eucalyptus molecules.
+                    Nuestros parches mensuales están constituidos de una matriz
+                    de moléculas de mentol y eucalipto.
                   </p>
                 </Col>
               </Row>
@@ -324,12 +323,12 @@ const IndexPage = () => {
                     <div className="patch-num-outer patch-num-green me-2">
                       <div className="patch-num-inner">2</div>
                     </div>
-                    0.3mm thick
+                    0.3 mm de ancho
                   </h2>
                   <p className="patch-text">
-                    A thin, discreet adhesive strip that's perfectly convenient
-                    at any time of the month. Use it during work, sleep,
-                    exercise or travel!
+                    Un delgado y discreto adhesivo que es perfecto para
+                    cualquier etapa del mes y puedes usarlo durante el trabajo
+                    ejercicio sueño y viajes.
                   </p>
                 </Col>
               </Row>
@@ -351,12 +350,12 @@ const IndexPage = () => {
                     <div className="patch-num-outer patch-num-purple me-2">
                       <div className="patch-num-inner">3</div>
                     </div>
-                    Molecules Released
+                    Liberación de las moléculas
                   </h2>
                   <p className="patch-text">
-                    Experience the fast-acting effect of the Monthly Patch over
-                    a 12 hour release, complimenting your daily routine at any
-                    time: all day or night!
+                    Experimenta la rápida acción de parche mensual por más de 12
+                    horas, complementando tu rutina en cualquier momento:
+                    durante el día y la noche.
                   </p>
                 </Col>
               </Row>
@@ -367,12 +366,13 @@ const IndexPage = () => {
       <Container>
         <Row className="mt-4 mb-4 mb-md-5 mt-md-5">
           <Col md={12}>
-            <h2 className="monthly-patches">BeYou Monthly Patches</h2>
+            <h2 className="monthly-patches">BeYou, parches mensuales</h2>
           </Col>
         </Row>
         <Row>
           <Col md={12}>
             <Swiper
+              className="py-3"
               slidesPerView={2}
               spaceBetween={20}
               autoplay={true}
@@ -390,7 +390,7 @@ const IndexPage = () => {
                 <StaticImage
                   src="../images/monthly/monthly-patch-1.webp"
                   alt="Beyou"
-                  className="w-100 py-2"
+                  className="w-100"
                 />
               </SwiperSlide>
               <SwiperSlide>
