@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import Menu from "../components/Menu";
+import Formulario from "../components/Formulario";
 import Footer from "../components/Footer";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -66,7 +67,7 @@ const IndexPage = () => {
             className="px-0 d-flex justify-content-center order-1 order-md-2"
           >
             <StaticImage
-              src="../images/banner/beyou-header.jpg"
+              src="../images/banner/beyou-header.png"
               alt="Beyou logo"
             />
           </Col>
@@ -155,7 +156,7 @@ const IndexPage = () => {
               <tbody>
                 <tr className="border-left-hidden">
                   <td>
-                    <h3 className="title-table">Comfort en cada uno</h3>
+                    <h3 className="title-table">Confortable cuando lo usas</h3>
                   </td>
                   <td>
                     <FontAwesomeIcon icon={faCheckCircle} />
@@ -189,9 +190,7 @@ const IndexPage = () => {
                 </tr>
                 <tr className="border-left-hidden">
                   <td>
-                    <h3 className="title-table">
-                      Conveniente para dormir con el
-                    </h3>
+                    <h3 className="title-table">Conveniente para dormir</h3>
                   </td>
                   <td>
                     <FontAwesomeIcon icon={faCheckCircle} />
@@ -209,7 +208,7 @@ const IndexPage = () => {
                 <tr className="border-left-hidden">
                   <td>
                     <h3 className="title-table">
-                      Liberación después de las 12 horas
+                      Actúa durante más de 12 horas
                     </h3>
                   </td>
                   <td>
@@ -273,7 +272,7 @@ const IndexPage = () => {
           <Col md={12} className="d-flex justify-content-center mt-1 mt-md-4">
             <h4 className="subtitle-table">
               Di adiós a las almohadillas térmicas voluminosas y rellenado de
-              botellas de agua caliente y hola al comfort de los parches
+              botellas de agua caliente y hola al confort de los parches
               mensuales BeYou
             </h4>
           </Col>
@@ -388,21 +387,21 @@ const IndexPage = () => {
             >
               <SwiperSlide>
                 <StaticImage
-                  src="../images/monthly/monthly-patch-1.webp"
+                  src="../images/monthly/monthly-patch-1.jpg"
                   alt="Beyou"
                   className="w-100"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <StaticImage
-                  src="../images/monthly/monthly-patch-2.webp"
+                  src="../images/monthly/monthly-patch-2.png"
                   alt="Beyou"
                   className="w-100"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <StaticImage
-                  src="../images/monthly/monthly-patch-3.webp"
+                  src="../images/monthly/monthly-patch-3.png"
                   alt="Beyou"
                   className="w-100"
                 />
@@ -449,9 +448,7 @@ const IndexPage = () => {
       <br />
       <br />
       <br />
-
-      {/* <FontAwesomeIcon icon={faCheckCircle} />
-      <FontAwesomeIcon icon={faTimesCircle} /> */}
+      <Formulario />
       <Footer />
     </main>
   );

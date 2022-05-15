@@ -35,6 +35,10 @@
   background-color: #f4c446;
 }
 
+.bg-purple {
+  background-color: #4f397d;
+}
+
 .banner-title {
   color: #000000;
   font-family: Karla, sans-serif;
@@ -239,9 +243,9 @@
   border-radius: 50%;
   color: #fff;
   height: 40px;
+  min-width: 40px;
   position: relative;
   width: 40px;
-  min-width: 40px;
 }
 
 .patch-num-purple {
@@ -296,28 +300,12 @@ footer {
   text-align: center;
 }
 
-footer {
-  background-color: #4f397d;
-  text-align: center;
-}
-
 .contact-title {
   color: #ffffff;
   font-family: Karla, sans-serif;
   font-size: 32px;
   font-weight: 700;
   letter-spacing: 1.1;
-  text-align: center;
-}
-
-.btn-enviar {
-  font-family: Karla, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  line-height: 19px;
-  min-width: 150px;
-  padding: 10px 12px;
 }
 
 .text-footer {
@@ -329,8 +317,48 @@ footer {
 
 .copyright {
   color: #ffffff;
-  font-size: 14px;
   font-family: Karla, sans-serif;
+  font-size: 14px;
+}
+
+.legal {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.order-product {
+  font-family: Karla, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.product-image {
+  max-width: 300px;
+}
+
+.name-product {
+  font-family: Karla, sans-serif;
+  font-size: 18px;
+}
+
+.price-product {
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+}
+
+.precio {
+  color: #ffffff;
+  font-family: Karla, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.btn-enviar {
+  background-color: #2aa69c;
+  color: #ffffff;
+  font-family: Karla, sans-serif;
+  padding: 12px 0;
 }
 
 @media (max-width: 575.98px) {
@@ -438,20 +466,12 @@ footer {
   .contact-title {
     font-size: 22px;
   }
-}
 
-/* .swiper-container {
-  width: 480px;
-}
+  footer {
+    font-size: 14px;
+  }
 
-@media screen and (min-width: 640px) {
-  .swiper-container {
-    width: 640px;
+  .precio {
+    font-size: 18px;
   }
 }
-
-@media screen and (min-width: 768px) {
-  .swiper-container {
-    width: 768px;
-  }
-} */
