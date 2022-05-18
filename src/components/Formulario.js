@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import axios from "axios";
+import Swal from "sweetalert2";
+import Spinner from "../components/spinner";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -8,6 +11,109 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
 
 const Formulario = () => {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
+  const [activeSpinner, setActiveSpinner] = useState(false);
+  const [nombreCompleto, setNombreCompleto] = useState("");
+  const [numeroCelular, setNumeroCelular] = useState("");
+  const [cantidad, setCantidad] = useState(0);
+  const [email, setEmail] = useState("");
+  const [ciudad, setCiudad] = useState("");
+  const [direccion, setDireccion] = useState("");
+  const [formaPago, setFormaPago] = useState("");
+  // eslint-disable-next-line
+  const [precio, setPrecio] = useState(10);
+
+  var precio_final = cantidad * precio;
+
+  console.log(nombreCompleto);
+  console.log(numeroCelular);
+  console.log(cantidad);
+  console.log(email);
+  console.log(ciudad);
+  console.log(direccion);
+  console.log(formaPago);
+
+  const handleChange = (event) => {
+    setFormaPago(event.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setActiveSpinner(true);
+    // let cid = cuid();
+    const dataForm = new FormData();
+    dataForm.append("nombre_completo", nombreCompleto);
+    dataForm.append("numero_celular", numeroCelular);
+    dataForm.append("cantidad", cantidad);
+    dataForm.append("email", email);
+    dataForm.append("ciudad", ciudad);
+    dataForm.append("direccion", direccion);
+    dataForm.append("forma_pago", formaPago);
+    const respuesta = await axios.post(
+      "https://kernel.inkside.studio/api/pedido",
+      dataForm
+    );
+    if (respuesta.status === 200) {
+      if (respuesta.data.status === "Ok") {
+        setNombreCompleto("");
+        setNumeroCelular("");
+        setCantidad(0);
+        setEmail("");
+        setCiudad("");
+        setDireccion("");
+        // setFormaPago("");
+        e.target.reset();
+        setActiveSpinner(false);
+        // handleClose();
+        Toast.fire({
+          icon: "success",
+          title: "Su pedido ha sido realizado exitosamente",
+        });
+        /* Swal.fire({
+          title: "¡Gracias por confiar en nosotros!",
+          text: "Pronto nos pondremos en contacto con usted.",
+          showCloseButton: true,
+          icon: "success",
+        }); */
+      } else {
+        setActiveSpinner(false);
+        Toast.fire({
+          icon: "error",
+          title: "Error al enviar la información",
+        });
+        /* Swal.fire({
+          title: "Error al enviar la información",
+          text: "Intente en unos minutos...",
+          showCloseButton: true,
+          icon: "error",
+        }); */
+      }
+    } else {
+      setActiveSpinner(false);
+      Toast.fire({
+        icon: "error",
+        title: "Error al enviar la información",
+      });
+      /* Swal.fire({
+        title: "Error al enviar informacion",
+        text: "Intente en unos minutos...",
+        showCloseButton: true,
+        icon: "error",
+      }); */
+    }
+  };
+
   return (
     <>
       <Container>
@@ -23,7 +129,7 @@ const Formulario = () => {
             <Form
               className="contacto-form"
               id="contacto"
-              // onSubmit={handleSubmit}
+              onSubmit={handleSubmit}
             >
               <Row>
                 <Col md={12} className="mt-3">
@@ -32,7 +138,7 @@ const Formulario = () => {
                       type="text"
                       placeholder="Nombre completo"
                       required
-                      // onChange={(e) => setNombres(e.target.value)}
+                      onChange={(e) => setNombreCompleto(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
@@ -42,7 +148,7 @@ const Formulario = () => {
                       type="text"
                       placeholder="Número de celular"
                       required
-                      // onChange={(e) => setTelefono(e.target.value)}
+                      onChange={(e) => setNumeroCelular(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
@@ -53,7 +159,7 @@ const Formulario = () => {
                       type="number"
                       placeholder="Candidad de producto a comprar"
                       required
-                      // onChange={(e) => setTelefono(e.target.value)}
+                      onChange={(e) => setCantidad(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
@@ -63,7 +169,7 @@ const Formulario = () => {
                       type="email"
                       placeholder="Email"
                       required
-                      // onChange={(e) => setPais(e.target.value)}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
@@ -74,7 +180,7 @@ const Formulario = () => {
                       type="text"
                       placeholder="Ciudad"
                       required
-                      // onChange={(e) => setCiudad(e.target.value)}
+                      onChange={(e) => setCiudad(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
@@ -85,14 +191,19 @@ const Formulario = () => {
                       type="text"
                       placeholder="Dirección"
                       required
-                      // onChange={(e) => setPais(e.target.value)}
+                      onChange={(e) => setDireccion(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
 
                 <Col md={12} className="mt-3">
                   <FloatingLabel label="Forma de pago">
-                    <Form.Select required>
+                    <Form.Select
+                      required
+                      id="forma-pago"
+                      value={formaPago}
+                      onChange={handleChange}
+                    >
                       <option value="">- Seleccione -</option>
                       <option value="Efectivo">Efectivo</option>
                       <option value="Transferencia">Transferencia</option>
@@ -100,20 +211,32 @@ const Formulario = () => {
                   </FloatingLabel>
                 </Col>
 
-                <Col md={12} controlId="formGridPassword mx-auto">
+                <Col md={12}>
                   <p className="legal mt-2">
                     El precio no incluye precio de envío
                   </p>
                   <h2 className="precio">
-                    Precio: <span>$0.00</span>
+                    Precio: <span>${precio_final}</span>
                   </h2>
-                  <Button
+                  {/* <Button
                     variant="light"
                     type="submit"
                     className="btn-enviar rounded-0 px-4 mt-4 w-100"
                   >
                     Comprar
-                  </Button>
+                  </Button> */}
+
+                  {activeSpinner ? (
+                    <Spinner className="mt-4" />
+                  ) : (
+                    <Button
+                      type="submit"
+                      variant="light"
+                      className="btn-enviar rounded-0 px-4 mt-4 w-100"
+                    >
+                      Enviar
+                    </Button>
+                  )}
                 </Col>
               </Row>
             </Form>
@@ -130,7 +253,7 @@ const Formulario = () => {
             />
             <h2 className="order-product">Producto a ordenar</h2>
             <h3 className="name-product">Nombre del producto</h3>
-            <h4 className="price-product">$0.00</h4>
+            <h4 className="price-product">$10</h4>
           </Col>
         </Row>
       </Container>
