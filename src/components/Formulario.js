@@ -36,14 +36,6 @@ const Formulario = () => {
 
   var precio_final = cantidad * precio;
 
-  console.log(nombreCompleto);
-  console.log(numeroCelular);
-  console.log(cantidad);
-  console.log(email);
-  console.log(ciudad);
-  console.log(direccion);
-  console.log(formaPago);
-
   const handleChange = (event) => {
     setFormaPago(event.target.value);
   };
@@ -252,7 +244,7 @@ const Formulario = () => {
               className="product-image"
             />
             <h2 className="order-product">Producto a ordenar</h2>
-            <h3 className="name-product">Nombre del producto</h3>
+            <h3 className="name-product">Parches mensuales</h3>
             <h4 className="price-product">$10</h4>
           </Col>
         </Row>
