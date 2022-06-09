@@ -24,12 +24,14 @@ const Formulario = () => {
   });
 
   const [activeSpinner, setActiveSpinner] = useState(false);
-  const [nombreCompleto, setNombreCompleto] = useState("");
-  const [numeroCelular, setNumeroCelular] = useState("");
-  const [cantidad, setCantidad] = useState(0);
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [direccion, setDireccion] = useState("");
+  const [direccion2, setDireccion2] = useState("");
   const [email, setEmail] = useState("");
   const [ciudad, setCiudad] = useState("");
-  const [direccion, setDireccion] = useState("");
+  const [celular, setCelular] = useState("");
+  const [cantidad, setCantidad] = useState(0);
   const [formaPago, setFormaPago] = useState("");
   // eslint-disable-next-line
   const [precio, setPrecio] = useState(10);
@@ -45,12 +47,14 @@ const Formulario = () => {
     setActiveSpinner(true);
     // let cid = cuid();
     const dataForm = new FormData();
-    dataForm.append("nombre_completo", nombreCompleto);
-    dataForm.append("numero_celular", numeroCelular);
-    dataForm.append("cantidad", cantidad);
+    dataForm.append("nombre", nombre);
+    dataForm.append("apellido", apellido);
+    dataForm.append("direccion", direccion);
+    dataForm.append("direccion2", direccion2);
     dataForm.append("email", email);
     dataForm.append("ciudad", ciudad);
-    dataForm.append("direccion", direccion);
+    dataForm.append("celular", celular);
+    dataForm.append("cantidad", cantidad);
     dataForm.append("forma_pago", formaPago);
     const respuesta = await axios.post(
       "https://kernel.inkside.studio/api/pedido",
@@ -58,12 +62,14 @@ const Formulario = () => {
     );
     if (respuesta.status === 200) {
       if (respuesta.data.status === "Ok") {
-        setNombreCompleto("");
-        setNumeroCelular("");
-        setCantidad(0);
+        setNombre("");
+        setApellido("");
+        setDireccion("");
+        setDireccion2("");
         setEmail("");
         setCiudad("");
-        setDireccion("");
+        setCelular("");
+        setCantidad(0);
         // setFormaPago("");
         e.target.reset();
         setActiveSpinner(false);
@@ -124,55 +130,23 @@ const Formulario = () => {
               onSubmit={handleSubmit}
             >
               <Row>
-                <Col md={12} className="mt-3">
-                  <FloatingLabel label="Nombre completo">
+                <Col md={6} className="mt-3">
+                  <FloatingLabel label="Nombre">
                     <Form.Control
                       type="text"
-                      placeholder="Nombre completo"
+                      placeholder="Nombre"
                       required
-                      onChange={(e) => setNombreCompleto(e.target.value)}
+                      onChange={(e) => setNombre(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
-                <Col md={12} className="mt-3">
-                  <FloatingLabel label="Número de celular">
+                <Col md={6} className="mt-3">
+                  <FloatingLabel label="Apellido">
                     <Form.Control
                       type="text"
-                      placeholder="Número de celular"
+                      placeholder="Apellido"
                       required
-                      onChange={(e) => setNumeroCelular(e.target.value)}
-                    />
-                  </FloatingLabel>
-                </Col>
-
-                <Col md={12} className="mt-3">
-                  <FloatingLabel label="Cantidad de producto a comprar">
-                    <Form.Control
-                      type="number"
-                      placeholder="Candidad de producto a comprar"
-                      required
-                      onChange={(e) => setCantidad(e.target.value)}
-                    />
-                  </FloatingLabel>
-                </Col>
-                <Col md={12} className="mt-3">
-                  <FloatingLabel label="Email">
-                    <Form.Control
-                      type="email"
-                      placeholder="Email"
-                      required
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </FloatingLabel>
-                </Col>
-
-                <Col md={12} className="mt-3">
-                  <FloatingLabel label="Ciudad">
-                    <Form.Control
-                      type="text"
-                      placeholder="Ciudad"
-                      required
-                      onChange={(e) => setCiudad(e.target.value)}
+                      onChange={(e) => setApellido(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
@@ -184,6 +158,60 @@ const Formulario = () => {
                       placeholder="Dirección"
                       required
                       onChange={(e) => setDireccion(e.target.value)}
+                    />
+                  </FloatingLabel>
+                </Col>
+
+                <Col md={12} className="mt-3">
+                  <FloatingLabel label="Edificio, apartamento, etc.">
+                    <Form.Control
+                      type="text"
+                      placeholder="Edificio, apartamento, etc."
+                      required
+                      onChange={(e) => setDireccion2(e.target.value)}
+                    />
+                  </FloatingLabel>
+                </Col>
+
+                <Col md={12} className="mt-3">
+                  <FloatingLabel label="Email">
+                    <Form.Control
+                      type="email"
+                      placeholder="Email"
+                      required
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </FloatingLabel>
+                </Col>
+
+                <Col md={6} className="mt-3">
+                  <FloatingLabel label="Ciudad">
+                    <Form.Control
+                      type="text"
+                      placeholder="Ciudad"
+                      required
+                      onChange={(e) => setCiudad(e.target.value)}
+                    />
+                  </FloatingLabel>
+                </Col>
+                <Col md={6} className="mt-3">
+                  <FloatingLabel label="Celular">
+                    <Form.Control
+                      type="text"
+                      placeholder="Celular"
+                      required
+                      onChange={(e) => setCelular(e.target.value)}
+                    />
+                  </FloatingLabel>
+                </Col>
+
+                <Col md={12} className="mt-3">
+                  <FloatingLabel label="Número de sobres">
+                    <Form.Control
+                      type="number"
+                      placeholder="Número de sobres"
+                      required
+                      onChange={(e) => setCantidad(e.target.value)}
                     />
                   </FloatingLabel>
                 </Col>
@@ -236,16 +264,17 @@ const Formulario = () => {
 
           <Col
             md={6}
-            className="text-center pb-3 pb-md-0 my-auto order-1 order-md-2"
+            className="text-center pb-3 pb-md-0 order-1 order-md-2 bg-product d-flex align-items-center ps-md-5 pe-md-5"
           >
-            <StaticImage
-              src="../images/form/producto.png"
-              alt="Beyou producto"
-              className="product-image"
-            />
-            <h2 className="order-product">Producto a ordenar</h2>
-            <h3 className="name-product">Parches mensuales</h3>
-            <h4 className="price-product">$10</h4>
+            <div className="">
+              <StaticImage
+                src="../images/form/producto.png"
+                alt="Beyou producto"
+              />
+              <h2 className="order-product mt-3 mt-md-4">Parches mensuales</h2>
+              <h3 className="name-product">Cada sobre contiene 5 unidades</h3>
+              <h4 className="price-product">$10</h4>
+            </div>
           </Col>
         </Row>
       </Container>
